@@ -1,0 +1,122 @@
+:root {
+  --bg: #f5f3ec;
+  --ink: #151515;
+  --muted: #595750;
+  --accent: #e6501f;
+  --accent-2: #0f7f74;
+  --surface: #fffdf8;
+  --line: #d6d1c4;
+  --radius: 20px;
+  --shadow: 0 18px 40px rgba(20, 20, 20, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-space-grotesk), "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 6% 8%, #ffe8d6 0%, transparent 28%),
+    radial-gradient(circle at 92% 4%, #c6ece7 0%, transparent 24%),
+    linear-gradient(180deg, #f8f6ef 0%, var(--bg) 100%);
+  color: var(--ink);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2rem, 4.8vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0.78rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: rise 640ms ease forwards;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coming-shell {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.coming-card {
+  width: min(680px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.coming-card h1 {
+  margin: 0.6rem 0 0;
+}
+
+.coming-card p {
+  margin: 1rem auto 0;
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.linkedin-only {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-height: 48px;
+  margin-top: 1.3rem;
+  padding: 0;
+}
+
+.linkedin-icon {
+  display: block;
+}
